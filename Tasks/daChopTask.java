@@ -1,11 +1,11 @@
 package daTaskScript.Tasks;
 
+import daTaskScript.daTaskScriptMain;
 import simple.hooks.scripts.task.Task;
 import simple.hooks.wrappers.SimpleObject;
 import simple.robot.api.ClientContext;
 
 public class daChopTask extends Task {
-
     public daChopTask(ClientContext ctx) {
         super(ctx);
     }
@@ -21,6 +21,7 @@ public class daChopTask extends Task {
         if (ctx.players.getLocal().getAnimation() == -1) {
             SimpleObject tree = ctx.objects.populate().filter(29668).nextNearest();
             if (tree != null) {
+                daTaskScriptMain.status("Cutting Redwood");
                 tree.click("Cut");
                 ctx.sleep(2500);
                 }
@@ -31,7 +32,6 @@ public class daChopTask extends Task {
 
     @Override
     public String status() {
-        return "Chopping tree";
+        return "Cutting tree";
     }
-
 }
