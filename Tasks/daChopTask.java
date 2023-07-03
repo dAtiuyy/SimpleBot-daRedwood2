@@ -32,6 +32,6 @@ public class daChopTask extends Task {
 
     @Override
     public String status() {
-        return "Cutting tree";
+        return "";
     }
 }

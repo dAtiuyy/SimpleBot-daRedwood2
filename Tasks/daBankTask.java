@@ -39,6 +39,6 @@ public class daBankTask extends Task {
 
     @Override
     public String status() {
-        return "Banking logs";
+        return "";
     }
 }

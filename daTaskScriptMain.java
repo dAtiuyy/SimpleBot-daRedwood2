@@ -18,10 +18,10 @@ import simple.hooks.simplebot.ChatMessage;
         category = Category.WOODCUTTING,
         description = "<html>"
                 + "<p>Basically daRedwood but task based</p>"
-                + "<p><strong>Cuts redwood @ home in Battlescape</strong></p>"
+                + "<p><strong>Cuts redwood @ home in Battlescape</strong>.</p>"
                 + "<ul>"
                 + "<li><strong>Start @ da big redwood at home with the deposit box on ur screen</strong>.</li>"
-                + "<li><strong>Have an axe equipped and dont worry about bird nests or logs, it picks up bird nests and bank em along with logs</strong></li>"
+                + "<li><strong>Have an axe equipped and dont worry about bird nests or logs, it picks up bird nests and bank em along with logs</strong>.</li>"
                 + "</ul>"
                 + "</html>",
         discord = "",
@@ -62,7 +62,7 @@ public class daTaskScriptMain extends TaskScript {
         // Can add anything here before tasks have been ran
         super.onProcess();// Needed for the TaskScript to process the tasks
         //Can add anything here after tasks have been ran
-        if (!ctx.groundItems.populate().filter(BIRD_NEST).isEmpty()) {
+        if (!ctx.groundItems.populate().filter(BIRD_NEST).isEmpty() && !ctx.inventory.inventoryFull()) {
             status("Looting items");
             ctx.groundItems.nearest().next().click("Take");
             ctx.sleep(2000);
